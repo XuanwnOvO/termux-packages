@@ -33,6 +33,14 @@ jobs:
           set -euxo pipefail
           ./scripts/run-docker.sh ./scripts/build-bootstraps.sh --architectures aarch64
 
+      - name: Normalize deb filenames (upload-artifact rejects colons)
+        run: |
+          set -euxo pipefail
+          # debs with an epoch version (e.g. ca-certificates-java_1:...) contain
+          # a colon in the filename; rename for upload. Package/version metadata
+          # inside the deb control file is untouched.
+          find output -name '*:*' -type f -exec bash -c 'mv "$1" "${1//:/_}"' _ {} \;
+
       - name: Upload bootstrap zip
         uses: actions/upload-artifact@v4
         with:
@@ -63,6 +71,11 @@ jobs:
         run: |
           set -euxo pipefail
           ./scripts/run-docker.sh ./build-package.sh -a aarch64 npm
+
+      - name: Normalize deb filenames (upload-artifact rejects colons)
+        run: |
+          set -euxo pipefail
+          find output -name '*:*' -type f -exec bash -c 'mv "$1" "${1//:/_}"' _ {} \;
 
       - name: Upload debs
         uses: actions/upload-artifact@v4
