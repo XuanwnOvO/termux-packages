@@ -463,8 +463,10 @@ TERMUX__REPOS_HOST_ORG_URL="https://github.com/$TERMUX__REPOS_HOST_ORG_NAME"
 # - https://github.com/termux/termux-packages/wiki/Termux-file-system-layout#termux-private-app-data-directory
 #
 # Default value: `com.termux`
+# CodexApp fork: build everything for `com.codexapp` so all compile-time
+# prefixes (/data/data/com.codexapp/files/usr) match our app data dir.
 ##
-TERMUX_APP__PACKAGE_NAME="com.termux"
+TERMUX_APP__PACKAGE_NAME="com.codexapp"
 TERMUX_APP_PACKAGE="$TERMUX_APP__PACKAGE_NAME" # Deprecated alternative variable for `TERMUX_APP__PACKAGE_NAME`
 
 __termux_build_props__add_variables_validator_actions "TERMUX_APP__PACKAGE_NAME" "app_package_name"
