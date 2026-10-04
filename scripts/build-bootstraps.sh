@@ -429,7 +429,11 @@ main() {
 
 		# Core utilities.
 		PACKAGES+=("bash") # Used by `termux-bootstrap-second-stage.sh`
-		PACKAGES+=("bzip2")
+		# CodexApp fork: upstream still lists "bzip2" here but the package was
+		# renamed to libbz2 (which installs bin/bzip2) and packages/bzip2 no
+		# longer exists — building bootstraps from master fails with
+		# "No package bzip2 found in any of the enabled repositories".
+		PACKAGES+=("libbz2")
 		if ! ${BOOTSTRAP_ANDROID10_COMPATIBLE}; then
 			PACKAGES+=("command-not-found")
 		else
