@@ -246,7 +246,12 @@ create_bootstrap_archive() {
 		zip -r9 "${BOOTSTRAP_TMPDIR}/bootstrap-${1}.zip" ./*
 	)
 
-	mv -f "${BOOTSTRAP_TMPDIR}/bootstrap-${1}.zip" "$TERMUX_PACKAGES_DIRECTORY/"
+	# CodexApp fork: the container user (builder, uid 1000) may not be able to
+	# create files in the mounted workspace root (owned by the runner uid).
+	# output/ (TERMUX_BUILT_DEBS_DIRECTORY) is always writable — package debs
+	# are written there during the build.
+	mv -f "${BOOTSTRAP_TMPDIR}/bootstrap-${1}.zip" "$TERMUX_PACKAGES_DIRECTORY/" \
+		|| mv -f "${BOOTSTRAP_TMPDIR}/bootstrap-${1}.zip" "$TERMUX_BUILT_DEBS_DIRECTORY/"
 
 	echo "[*] Finished successfully (${1})."
 
