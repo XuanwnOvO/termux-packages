@@ -1,0 +1,24 @@
+Architectures: aarch64
+Codename: stable
+Components: main
+Date: Mon, 05 Oct 2026 03:16:40 +0000
+Description: CodexApp package repository
+Label: codexapp
+Origin: codexapp
+Suite: stable
+MD5Sum:
+ c2feb6ae8d031e915f2016961638de49              183 Release
+ 522d442a29936fa4f26762c18a23e18c           108022 main/binary-aarch64/Packages
+ ce4869eb604fa7f573621829b3391e9e            35525 main/binary-aarch64/Packages.gz
+SHA1:
+ f62b8a8f9fb0f89f4f2b6dea4907d3d0dae3e89e              183 Release
+ 3922e81a590d471ab32b4b228a3fced158222cb5           108022 main/binary-aarch64/Packages
+ bd303f7653b6e39c147c211d9db606c2275b0a30            35525 main/binary-aarch64/Packages.gz
+SHA256:
+ be3bfb264d9368ca86b3c8de1a36d07b27a3ba6164651823149ef8f99d723892              183 Release
+ b53db8e0dbe865e4becee603cc21084adba1c2b47fb59989158cb1ed7e280626           108022 main/binary-aarch64/Packages
+ 8cbb7ecd25c50e65a8ad3afd9f2e2b5b88d1859ea81ae48d501d21bf333e5c73            35525 main/binary-aarch64/Packages.gz
+SHA512:
+ 26c07b2dd2b80aa4f37f45926d948f41e60c4c23ce85db648d15d8b842858d968723024e8816ee940066dc41d5a93afd9942b288d94b82b6153f264b25da3eac              183 Release
+ 788b9c714e82694ffef6db15780b222a50150c8132611603569b5e8021c7bb16b22f91e5601c52c7b7e19b52212adfa7b8c3515ce18104b4c7a1ca6bc8e90b2e           108022 main/binary-aarch64/Packages
+ e1912f570fc14b0461074c8dc2cc08888a5b9c3d91ffcafdd00553a35696585494c2fb9954b6e137b98abc52cbbbbfd262671e8e6c241a60664ab7de0f231cc6            35525 main/binary-aarch64/Packages.gz
